@@ -20,7 +20,7 @@ Les hostnames des machines distantes ne doivent pas avoir de caractère spécial
 
 Lorsqu’on lance le playbook wazuh-ossec.yml, il faut bien vérifier le chemin src, pour le vérifier faite realpath ossec.conf
 
-![image](https://github.com/JulenSe/Wazuh_Project/assets/54896656/b6fdc577-a2a6-4772-9737-ecfaf295d435)
+![image](https://github.com/JulenSe/Wazuh_Project/assets/54896656/6c09eb0e-0983-4a29-9673-0f4406b46445)
 
 Veillez à bien mettre l’adresse ip de votre serveur wazuh dans la section sous-ligné.
 

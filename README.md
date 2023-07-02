@@ -24,6 +24,7 @@ Lorsqu’on lance le playbook wazuh-ossec.yml, il faut bien vérifier le chemin 
 
 Veillez à bien mettre l’adresse ip de votre serveur wazuh dans la section soulignée.
 
+La commande ppour lancer les playbook est la suivante ansible-playbook (le playbook) -b -K
 Lorsque tous les prérequis sont remplis, vous pouvez lancer les playbook dans cet ordre :
 wazuh-indexer-and-dashboard.yml > wazuh-manager-oss.yml > wazuh-ossec.yml > wazuh-agent.yml
 

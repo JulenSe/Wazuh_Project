@@ -4,7 +4,7 @@ Il faut avoir un serveur ansible configuré
 
 Pour que ansible puisse se déployer correctement il faut que la clé ssh soit partager avec les autres machines distantes.
 
-En cas de besoin voici la documentation pour configurer le ssh sur les machines distantes :
+En cas de besoin voici la documentation pour configurer et installer ansible:
 
 https://documentation.wazuh.com/current/deployment-options/deploying-with-ansible/guide/install-ansible.html
 

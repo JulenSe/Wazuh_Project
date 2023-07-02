@@ -17,9 +17,11 @@ Il faut aussi bien organiser son fichier hosts, et mettre les ips des terminaux 
 Les hostnames des machines distantes ne doivent pas avoir de caractère spécial, dans le hostname il ne doit y’avoir que des chiffres, des lettres et aucun espace.
 
 ![image](https://github.com/JulenSe/Wazuh_Project/assets/54896656/382452e9-8389-49e5-abf5-1c5e672b2180)
+
 Lorsqu’on lance le playbook wazuh-ossec.yml, il faut bien vérifier le chemin src, pour le vérifier faite realpath ossec.conf
 
 ![image](https://github.com/JulenSe/Wazuh_Project/assets/54896656/b6fdc577-a2a6-4772-9737-ecfaf295d435)
+
 Veillez à bien mettre l’adresse ip de votre serveur wazuh dans la section sous-ligné
 
 Lorsque tous les prérequis sont remplis vous pouvez lancer les playbook dans cet ordre :

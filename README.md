@@ -36,7 +36,13 @@ Ouvrez le fichier de configuration ossec.conf :
 bash
 sudo nano /var/ossec/etc/ossec.conf
 Recherchez la section <global> et configurez les options d'e-mail comme suit :
-<ossec_config><global><email_notification>yes</email_notification><email_to>votre_email@example.com</email_to><smtp_server>serveur_smtp.example.com</smtp_server><email_from>wazuh@example.com</email_from></global>
+<ossec_config>
+<global>
+<email_notification>yes</email_notification>
+<email_to>votre_email@example.com</email_to>
+<smtp_server>serveur_smtp.example.com</smtp_server>
+<email_from>wazuh@example.com</email_from>
+</global>
     ...
 </ossec_config>
 

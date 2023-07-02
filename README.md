@@ -31,6 +31,7 @@ Lorsque tous les prérequis sont remplis, vous pouvez lancer les playbook dans c
 wazuh-indexer-and-dashboard.yml > wazuh-manager-oss.yml > wazuh-ossec.yml > wazuh-agent.yml
 
 Configuration des alertes par e-mail
+
 Ouvrez le fichier de configuration ossec.conf :
 bash
 sudo nano /var/ossec/etc/ossec.conf
@@ -43,6 +44,7 @@ Assurez-vous de remplacer votre_email@example.com par votre adresse e-mail réel
 
 Définissez le niveau d'alerte minimal qui déclenchera un e-mail en modifiant la valeur <email_alert_level> dans la section <alerts>. Par exemple :
 xml
+
 <ossec_config><alerts><email_alert_level>10</email_alert_level></alerts>
   ...
 </ossec_config>

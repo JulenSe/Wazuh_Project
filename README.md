@@ -11,22 +11,27 @@ https://documentation.wazuh.com/current/deployment-options/deploying-with-ansibl
 Pour pouvoir déployer des playbook ansible sur windows il faut suivre cette documentation :
 https://docs.ansible.com/ansible/latest/os_guide/index.html
 
-**Configuration **
+**Configuration**
+
 Il faut aussi bien organiser son fichier hosts, et mettre les ips des terminaux dans les bonnes sections.
 ![image](https://github.com/JulenSe/Wazuh_Project/assets/54896656/c2db9e28-be96-4cb3-b191-b0feaa8988b0)
 
 Les hostnames des machines distantes ne doivent pas avoir de caractère spécial, dans le hostname il ne doit y avoir que des chiffres, des lettres et aucun espace.
+
+Playbook pour automatiser la configuration
 
 ![image](https://github.com/JulenSe/Wazuh_Project/assets/54896656/d8ec3a8a-b28e-4d91-85f7-341322a97e3f)
 
 
 Lorsqu’on lance le playbook wazuh-ossec.yml, il faut bien vérifier le chemin src, pour le vérifier, faites realpath ossec.conf
 
+Playbook du Wazuh Agent : 
+
 ![image](https://github.com/JulenSe/Wazuh_Project/assets/54896656/f69998f6-9371-44a2-9e46-2642898a7d1c)
 
-Veillez à bien mettre l’adresse ip de votre serveur wazuh dans la section soulignée.
+Afin que votre agent puisse communiquer avec le serveur Wazuh, veillez à bien mettre l’adresse ip de votre serveur wazuh dans la section soulignée.
 
-**Déploiement **
+**Déploiement**
 
 La commande ppour lancer les playbook est la suivante : 
 

@@ -1,0 +1,14 @@
+---
+- name: Copy ossec.conf file to Wazuh Manager
+  hosts: wazuh_server
+  tasks:
+    - name: Copy ossec.conf file
+      copy:
+        src: /root/ossec.conf
+        dest: /var/ossec/etc/ossec.conf
+
+  post_tasks:
+    - name: Restart Wazuh Manager
+      systemd:
+        name: wazuh-manager
+        state: restarted

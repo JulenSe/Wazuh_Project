@@ -1,0 +1,8 @@
+---
+- hosts: wazuh_server
+  roles:
+    - role: ../roles/wazuh/ansible-wazuh-manager
+    - role: ../roles/wazuh/ansible-filebeat-oss
+      filebeat_node_name: node-1
+      filebeat_output_indexer_hosts:
+      - "127.0.0.1:9200"

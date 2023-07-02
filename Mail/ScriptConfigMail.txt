@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# Commandes pour installer les paquets requis
+apt-get update
+apt-get install -y postfix mailutils libsasl2-2 ca-certificates libsasl2-modules
+
+# Créer ou modifier le fichier /etc/postfix/main.cf
+cat << EOF > /etc/postfix/main.cf
+relayhost = [smtp.gmail.com]:587
+smtp_sasl_auth_enable = yes
+smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
+smtp_sasl_security_options = noanonymous
+smtp_tls_CAfile = /etc/ssl/certs/ca-certificates.crt
+smtp_use_tls = yes
+smtpd_relay_restrictions = permit_mynetworks, permit_sasl_authenticated, defer_unauth_destination
+EOF
+
+# Créer le fichier /etc/postfix/sasl_passwd avec les informations de connexion à Gmail
+cat << EOF > /etc/postfix/sasl_passwd
+[smtp.gmail.com]:587    projetossec@gmail.com:gerqgrmdolwxsffn
+EOF
+
+# Générer la base de données sasl_passwd.db
+postmap /etc/postfix/sasl_passwd
+
+# Modifier les permissions des fichiers
+chown root:root /etc/postfix/sasl_passwd /etc/postfix/sasl_passwd.db
+chmod 0600 /etc/postfix/sasl_passwd /etc/postfix/sasl_passwd.db
+
+# Redémarrer le service postfix
+systemctl restart postfix
+
+# Modifier le fichier /var/ossec/etc/ossec.conf avec les nouvelles configurations
+cat << EOF > /var/ossec/etc/ossec.conf
+<global>
+  <email_notification>yes</email_notification>
+  <smtp_server>localhost</smtp_server>
+  <email_from>projetossec@gmail.com</email_from>
+  <email_to>projetossec@gmail.com</email_to>
+</global>
+EOF
+
+# Redémarrer le service wazuh-manager
+systemctl restart wazuh-manager
+
+echo "Le script a terminé l'exécution avec succès."

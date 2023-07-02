@@ -22,7 +22,7 @@ Lorsqu’on lance le playbook wazuh-ossec.yml, il faut bien vérifier le chemin 
 
 ![image](https://github.com/JulenSe/Wazuh_Project/assets/54896656/e5b4fcf5-d4f0-4c49-895c-2af3f9eff370)
 
-Veillez à bien mettre l’adresse ip de votre serveur wazuh dans la section sousligné.
+Veillez à bien mettre l’adresse ip de votre serveur wazuh dans la section souligné.
 
 Lorsque tous les prérequis sont remplis, vous pouvez lancer les playbook dans cet ordre :
 wazuh-indexer-and-dashboard.yml > wazuh-manager-oss.yml > wazuh-ossec.yml > wazuh-agent.yml

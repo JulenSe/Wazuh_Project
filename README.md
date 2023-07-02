@@ -37,24 +37,16 @@ Ouvrez le fichier de configuration ossec.conf :
 bash
 sudo nano /var/ossec/etc/ossec.conf
 Recherchez la section <global> et configurez les options d'e-mail comme suit :
-<ossec_config>
-<global>
-<email_notification>yes</email_notification>
-<email_to>votre_email@example.com</email_to>
-<smtp_server>serveur_smtp.example.com</smtp_server>
-<email_from>wazuh@example.com</email_from>
-</global>
-    ...
-</ossec_config>
+
+![image](https://github.com/JulenSe/Wazuh_Project/assets/54896656/0e19b817-8bc8-4572-b82a-81ed969ed62f)
 
 Assurez-vous de remplacer votre_email@example.com par votre adresse e-mail réelle et serveur_smtp.example.com par le serveur SMTP de votre fournisseur de messagerie.
 
 Définissez le niveau d'alerte minimal qui déclenchera un e-mail en modifiant la valeur <email_alert_level> dans la section <alerts>. Par exemple :
 xml
 
-<ossec_config><alerts><email_alert_level>10</email_alert_level></alerts>
-  ...
-</ossec_config>
+![image](https://github.com/JulenSe/Wazuh_Project/assets/54896656/46725744-aa86-4f83-aa08-c70dbe452810)
+
 Cette valeur détermine le niveau minimal d'alerte pour lequel un e-mail sera envoyé.
 Enregistrez les modifications et quittez l'éditeur de texte.
 

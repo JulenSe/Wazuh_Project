@@ -11,6 +11,7 @@ https://documentation.wazuh.com/current/deployment-options/deploying-with-ansibl
 Pour pouvoir déployer des playbook ansible sur windows il faut suivre cette documentation :
 https://docs.ansible.com/ansible/latest/os_guide/index.html
 
+**Configuration **
 Il faut aussi bien organiser son fichier hosts, et mettre les ips des terminaux dans les bonnes sections.
 ![image](https://github.com/JulenSe/Wazuh_Project/assets/54896656/c2db9e28-be96-4cb3-b191-b0feaa8988b0)
 
@@ -25,17 +26,21 @@ Lorsqu’on lance le playbook wazuh-ossec.yml, il faut bien vérifier le chemin 
 
 Veillez à bien mettre l’adresse ip de votre serveur wazuh dans la section soulignée.
 
+**Déploiement **
+
 La commande ppour lancer les playbook est la suivante : 
+
 _ansible-playbook [le playbook] -b -K_
 
 Lorsque tous les prérequis sont remplis, vous pouvez lancer les playbook dans cet ordre :
 wazuh-indexer-and-dashboard.yml > wazuh-manager-oss.yml > wazuh-ossec.yml > wazuh-agent.yml
 
-Configuration des alertes par e-mail
+**Configuration des alertes par e-mail**
 
 Ouvrez le fichier de configuration ossec.conf :
-bash
-sudo nano /var/ossec/etc/ossec.conf
+
+_sudo nano /var/ossec/etc/ossec.conf_
+
 Recherchez la section <global> et configurez les options d'e-mail comme suit :
 
 ![image](https://github.com/JulenSe/Wazuh_Project/assets/54896656/0e19b817-8bc8-4572-b82a-81ed969ed62f)
@@ -50,11 +55,11 @@ xml
 Cette valeur détermine le niveau minimal d'alerte pour lequel un e-mail sera envoyé.
 Enregistrez les modifications et quittez l'éditeur de texte.
 
-Redémarrage de Wazuh
+**Redémarrage de Wazuh**
 
 Redémarrez le service Wazuh pour appliquer les modifications de configuration :
 
-sudo systemctl restart wazuh-manager
+_sudo systemctl restart wazuh-manager_
 
 Wazuh est maintenant configuré pour envoyer des alertes par e-mail.
 
